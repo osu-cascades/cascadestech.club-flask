@@ -1,0 +1,11 @@
+#hero {
+	background-image: url("/static/images/hero.jpg");
+	min-height: 800px; 
+	opacity: 1.5;
+}
+
+#hero-text {
+	color: #FFF;
+	text-align: center;
+	margin-top: 300px;
+}

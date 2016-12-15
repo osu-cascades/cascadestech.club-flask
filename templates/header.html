@@ -10,8 +10,6 @@
     <!-- Bootstrap -->
     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
 
-    <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -20,8 +18,8 @@
     <![endif]-->
   </head>
   <body>
-  <div class="jumbotron" id="hero">
-    <nav class="navbar navbar-default">
+  <div class="jumbotron" style="background-image: url({{ url_for('static', filename='images/hero.jpg') }}); min-height: 800px; opacity: 1.5;"">
+    <nav class="navbar navbar-default" style="background-image: url({{ url_for('static', filename='images/hero.jpg') }}); min-height: 800px; opacity: 1.5;"">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -47,20 +45,12 @@
     </nav>
 
     <div class="container">
-      <h1 id="hero-text">Hello, world!</h1>
+      <h1 style="color: #fff;">Hello, world!</h1>
     </div>
   </div>
 
   <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-3 col-md-3 col-sm-2">
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-6">
-        <p>The OSU-Cascades Computer Science Club was founded to provide students with a social network of individuals interested in computer science. The club was founded in Spring 2016 by a small group of students seeking to organize students in the growing Computer Science program at OSU-Cascades.</p>
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-2">
-      </div>
-    </div>
+
   </div>
 
     
