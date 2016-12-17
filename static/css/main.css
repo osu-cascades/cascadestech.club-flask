@@ -56,6 +56,11 @@ body p {
 	background: transparent;
 }
 
-.invert-row {
-	background-color: #777;
+#image-row {
+	padding-bottom: 25px;
+	background-size: cover;
+	background: linear-gradient(
+                     rgba(255,255,255, .95), 
+                     rgba(255,255,255, .95)),
+                     url("/static/images/stock-stripe.jpg");
 }
