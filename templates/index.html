@@ -9,7 +9,7 @@
 
     <!-- Bootstrap -->
     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
-
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -31,39 +31,49 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">Cascades Tech Club</a>
+          <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-console" aria-hidden="true"></span><strong>CTC</strong></a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Link</a></li>
-          </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Link</a></li>
+            <li><a href="#">Members</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Login</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
 
     <div class="container">
-      <h1 id="hero-text">Hello, world!</h1>
+      <h1 id="hero-text"><strong>Cascades Tech Club</strong></h1>
+      <h4 id="hero-sub">A student organization of OSU Cascades</h4>
     </div>
   </div>
 
   <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-3 col-md-3 col-sm-2">
+    <div class="row" style="margin-bottom: 50px;">
+      <div class="col-lg-3 col-md-3 col-sm-12">
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-6">
-        <p>The OSU-Cascades Computer Science Club was founded to provide students with a social network of individuals interested in computer science. The club was founded in Spring 2016 by a small group of students seeking to organize students in the growing Computer Science program at OSU-Cascades.</p>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <h1 style="text-align: center;"><strong>Who We Are</strong></h1>
+        <p>The Cascades Tech Club was founded to provide our community with a social network of individuals interested in technology. The club was founded in Spring 2016 by a small group of students seeking to teach, learn, and grow in the Computer Science program at OSU Cascades.</p>
+        <p>We are open to all individuals who are interested in learning some new tech as well as anyone who is looking to experience the culture at OSU Cascades. During the school year, we host regular meetings every Monday at 12:00pm in Tykeson Hall as well as semi-regular workshops, guest speakers, and other fun events. We always welcome new faces, come join us!</p>
+        <a class="ghost-btn"><strong>Contact Us</strong></span></a>
+        </div>
+    </div>
+
+    <div class="row invert-row">
+      <div class="col-lg-4 col-md-4 col-sm-1">
+      <p>test</p>
       </div>
-      <div class="col-lg-3 col-md-3 col-sm-2">
+      <div class="col-lg-4 col-md-4 col-sm-1">
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-1">
       </div>
     </div>
-  </div>
 
-    
+  </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

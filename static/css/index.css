@@ -1,5 +1,8 @@
 #hero {
-	background-image: url("/static/images/hero.jpg");
+	background: linear-gradient(
+                     rgba(20,20,20, .75), 
+                     rgba(20,20,20, .75)),
+                     url("/static/images/hero.jpg");
 	min-height: 800px; 
 	opacity: 1.5;
 }
@@ -8,4 +11,9 @@
 	color: #FFF;
 	text-align: center;
 	margin-top: 300px;
+}
+
+#hero-sub {
+	color: #ff5900;
+	text-align: center;
 }
