@@ -4,6 +4,10 @@ body {
 	text-align: center;
 }
 
+body p {
+	color: #777;
+}
+
 
 /* ---- Nav bar style ---- */
 .navbar-default {
