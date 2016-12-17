@@ -4,6 +4,8 @@ body {
 	text-align: center;
 }
 
+
+/* ---- Nav bar style ---- */
 .navbar-default {
 	background-color: transparent;
 	border-color: transparent;
@@ -26,14 +28,7 @@ body {
 .navbar-default .navbar-nav>li>a:hover {
 	color: #ff5900;
 }
-
-
-
-
-#document #discord-widget .widget-header {
-	background-color: #ff5900 !important;
-}
-
+/* ---- Nav bar style ENDS---- */
 
 
 .ghost-btn {
