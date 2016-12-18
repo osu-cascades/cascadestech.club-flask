@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    {% if title %}
-    <title>CTC - {{ title }}</title>
-    {% else %}
-    <title>Cascades Tech Club</title>
-    {% endif %}
+    <title>{% block title%}{% endblock%}</title>
 
     <!-- Bootstrap-->
     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    {% if home %}
     <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
+    {% else %}
+    <link href="{{ url_for('static', filename='css/interior.css') }}" rel="stylesheet">
+    {% endif %}
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,24 +44,34 @@
               <li><a href="#">Members</a></li>
               <li><a href="#">Events</a></li>
               <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Login</a></li>
+              <li><a href="/login">Login</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
 
-      <div class="container">
-        <h1 id="hero-text"><strong>Cascades Tech Club</strong></h1>
-        <h4 id="hero-sub">A student organization of OSU Cascades</h4>
-      </div>
+      {% if heroText %}
+        <div class="container">
+          <h1 id="hero-text"><strong>Cascades Tech Club</strong></h1>
+          <h4 id="hero-sub">A student organization of OSU Cascades</h4>
+        </div>
+      {% endif %}
     </div>
 
-    {% block content %}{% endblock %}
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+          <li>{{ message }} </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+      {% endwith %}
 
+    {% block content %}{% endblock %}
   </body>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-  </body>
 </html>

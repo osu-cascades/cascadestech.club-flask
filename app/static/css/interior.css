@@ -1,0 +1,19 @@
+#hero {
+	background: linear-gradient(
+                     rgba(20,20,20, .75), 
+                     rgba(20,20,20, .75)),
+                     url("/static/images/stock-stripe.jpg");
+	min-height: 400px; 
+	opacity: 1.5;
+}
+
+#hero-text {
+	color: #FFF;
+	text-align: center;
+	margin-top: 300px;
+}
+
+#hero-sub {
+	color: #ff5900;
+	text-align: center;
+}
