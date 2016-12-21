@@ -8,6 +8,9 @@
       <div class="col-lg-2 col-md-1">
       </div>
       <div class="col-lg-8 col-md-10 col-sm-12">
+        <h1 style="text-align: center;"><strong>Hello, {% if current_user.is_authenticated %}{{ current_user.username }}{% else %}Stranger{% endif %}!</strong></h1>
+        <br>
+        <br>
         <h1 style="text-align: center;"><strong>Who We Are</strong></h1>
         <p>The Cascades Tech Club was founded to provide our community with a social network of individuals interested in technology. The club was founded in Spring 2016 by a small group of students seeking to teach, learn, and grow in the Computer Science program at OSU Cascades.</p>
         <p>We are open to all individuals who are interested in learning some new tech as well as anyone who is looking to experience the culture at OSU Cascades. During the school year, we host regular meetings every Monday at 12:00pm in Tykeson Hall as well as semi-regular workshops, guest speakers, and other fun events. We always welcome new faces, come join us!</p>
