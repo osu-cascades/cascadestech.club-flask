@@ -1,4 +1,10 @@
 .DS_Store
-venv/
-*.pyc
+
+#virtual environment
+venv
+
+#compiled python files
+*.py[cod]
+
+#sqlite files
 *.sqlite
