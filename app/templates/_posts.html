@@ -32,6 +32,10 @@
             <a href="{{ url_for('.edit', id=post.id) }}">
             <span class="label label-danger">Edit [Admin]</span>
             </a>
+            </a>
+            <a href="{{ url_for('.delete', id=post.id) }}">
+            <span class="label label-danger">Delete [Admin]</span>
+            </a>
             {% endif %}
         </div>
     </li>
