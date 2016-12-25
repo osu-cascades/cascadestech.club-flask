@@ -102,6 +102,7 @@ def edit(id):
 	form.body.data = post.body
 	return render_template('edit_post.html', form=form)
 
+
 @main.route('/delete/<int:id>')
 @login_required
 def delete(id):
@@ -112,3 +113,12 @@ def delete(id):
 		db.session.delete(post)
 		flash('The post has been removed.')
 		return redirect(url_for('.events'))
+
+
+@main.route('/members')
+def members():
+	page = request.args.get('page', 1, type=int)
+	pagination = User.query.order_by(User.name.desc()).paginate(
+		page, per_page=current_app.config['MEMBERS_PER_PAGE'], error_out=False)
+	members = pagination.items
+	return render_template('members.html', members=members, pagination=pagination)

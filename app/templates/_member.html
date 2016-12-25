@@ -1,0 +1,18 @@
+{% for member in members %}
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<div class="member">
+			<div class="member-avatar">
+			<img class="img-rounded profile-thumbnail" src="{{ member.gravatar(size=200) }}">
+			</div>
+			<div class="member-content">
+				<h3>{{ member.name }}</h3>
+				<p>{{ member.about_me }}</p>
+				<a href="{{ url_for('.user', username=member.username) }}">
+					<span class="label label-info">View Profile</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+{% endfor %}
