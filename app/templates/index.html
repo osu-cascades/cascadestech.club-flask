@@ -4,24 +4,53 @@
 
 {% block content %}
   <div class="container-fluid">
-    <div class="row" style="margin-bottom: 50px;">
+    <div class="row bot-margin">
       <div class="col-lg-2 col-md-1">
       </div>
       <div class="col-lg-8 col-md-10 col-sm-12">
-        <h1 style="text-align: center;"><strong>Who We Are</strong></h1>
-        <p>The Cascades Tech Club was founded to provide our community with a social network of individuals interested in technology. The club was founded in Spring 2016 by a small group of students seeking to teach, learn, and grow in the Computer Science program at OSU Cascades.</p>
-        <p>We are open to all individuals who are interested in learning some new tech as well as anyone who is looking to experience the culture at OSU Cascades. During the school year, we host regular meetings every Monday at 12:00pm in Tykeson Hall as well as semi-regular workshops, guest speakers, and other fun events. We always welcome new faces, come join us!</p>
-        <a class="ghost-btn"><strong>Contact Us</strong></span></a>
+        <h1 style="text-align: center;"><strong>Cultivating Culture</strong></h1>
+        <p>The Cascades Tech Club was founded to provide students and our community with a social network of individuals interested in technology. The club was founded in Spring 2016 by a small group of students seeking to teach, learn, and grow in the Computer Science program at OSU Cascades as well as the growing tech community in Bend.</p>
+        <p>We are open to all individuals who are interested in learning some new tech as well as anyone who is looking to experience the culture at OSU Cascades. During the school year, we host regular meetings every <strong>Monday at 12:00pm in Tykeson Hall</strong> as well as semi-regular workshops, guest speakers, and other fun events.</p>
+        <a class="ghost-btn" href="/contact-us"><strong>Contact Us</strong></span></a>
+        <a class="ghost-btn" href="/events"><strong>Events</strong></span></a>
         </div>
     </div>
 
-    <div class="row" id="image-row">
+  <div class="row" id="image-row">
+    <div class="col-sm-6">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+          </ol>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <img src="{{ url_for('static', filename='images/Stock1.jpg') }}" alt="Chania">
+            </div>
+            <div class="item">
+              <img src="{{ url_for('static', filename='images/Stock2.jpg') }}" alt="Chania">
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6" id="half-text">
+      <h2 style="text-align: center;"><strong>Whats Trending?</strong></h1>
+      <p>We are dedicated to exploring as many of the new trends in the industry that we can. We aim to provide our community with a fun place to learn about anything of intereset. From simple HTML &amp; CSS to Embedded Systems programming, there is no tech topic that we can't explore together. 
+      </p>
+    </div>
+
+  </div>
+
+    <div class="row">
       <div class="col-lg-2 col-md-1">
       </div>
-      <div class="col-lg-8 col-md-10 col-sm-12">
+      <div class="col-lg-8 col-md-10 col-sm-12 top-margin bot-margin">
         <h2 style="text-align: center;"><strong>Join Our Discord Server</strong></h1>
         <p>The members of the Cascades Tech Club utilize a chat service called Discord as their main communication tool. There is almost always someone online to help in any way that they can. Club members use Discord to ask questions, collaborate in groups, as well as general chat. the CTC Discord server has grown to over 100 members and is a valuable resource when seeking help.</p>
-        <a class="ghost-btn"><strong>Connect to the CTC Discord Server</strong></span></a>
+        <a class="ghost-btn" href="https://discord.gg/ytfAGeM"><strong>Connect with Discord</strong></span></a>
       </div>
     </div>
   </div> <!-- end container fluid -->

@@ -8,6 +8,14 @@ body p {
 	color: #777;
 }
 
+.top-margin {
+	margin-top: 50px;
+}
+
+.bot-margin {
+	margin-bottom: 50px;
+}
+
 
 /* ---- Nav bar style ---- */
 .navbar-default {
@@ -36,8 +44,8 @@ body p {
 
 
 .ghost-btn {
-	color: #FFF;
-	background: #ff5900;
+	color: #ff5900;
+	background: #FFF;
 	border: 2px solid #ff5900;
 	border-radius: 5px;
 	font-size: 24px;
@@ -52,15 +60,37 @@ body p {
 
 .ghost-btn:hover, .ghost-btn:active {
 	text-decoration: none;
-	color: #ff5900;
-	background: transparent;
+	color: #FFF;
+	background: #ff5900;
 }
 
 #image-row {
-	padding-bottom: 25px;
 	background-size: cover;
 	background: linear-gradient(
                      rgba(255,255,255, .95), 
                      rgba(255,255,255, .95)),
                      url("/static/images/stock-stripe.jpg");
 }
+
+#footer-row {
+	padding: 25px 0 25px 0;
+	background-color: #3c4040;
+}
+
+#footer-row h3 {
+	color: #FFF;
+}
+
+#footer-left {
+	margin-left: 50px;
+}
+
+#footer-left h3 {
+	text-align: left;
+}
+
+#footer-left p {
+	text-align: left;
+}
+
+

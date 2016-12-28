@@ -1,0 +1,28 @@
+.member {
+	margin: 50px 0 50px 0;
+}
+
+.member-avatar {
+	margin-right: 25px;
+	text-align: left;
+	float: left;
+}
+
+.member-content {
+	display: inline;
+}
+
+.view-profile {
+	background-color: #ff5900;
+}
+
+.pagination>.active>a {
+	background-color: #ff5900;
+	border-color: #ff5900;
+}
+
+.pagination>.active>a:hover {
+	background-color: #FFF;
+	border-color: #ff5900;
+	color: #ff5900;
+}

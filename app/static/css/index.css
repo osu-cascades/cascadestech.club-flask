@@ -17,3 +17,11 @@
 	color: #ff5900;
 	text-align: center;
 }
+
+#half-text {
+	margin-top: 50px;
+}
+
+#half-text p {
+	margin: 0 50px 0 50px;
+}

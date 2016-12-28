@@ -1,27 +1,44 @@
 {% extends "base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 {% import "_macros.html" as macros %}
-
+{% block head %}
+	<link href="{{ url_for('static', filename='css/interior.css') }}" rel="stylesheet">
+{% endblock %}
 {% block title %}Events{% endblock %}
 
 {% block content %}
 <div class="page-header">
-    <h1>Events</h1>
+    <h1>Upcoming Events</h1>
 </div>
-<div class="col-md-6">
-	{% include '_posts.html' %}
-	{% if pagination %}
-	<div class="pagination">
-		{{ macros.pagination_widget(pagination, '.events') }}
+<div class="row">
+	<div class="col-md-6">
+		{% if current_user.can(Permission.MODERATE) %}
+		<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">New Event</button>
+		{% endif %}
+
+		{% include '_posts.html' %}
+		{% if pagination %}
+		<div class="pagination">
+			{{ macros.pagination_widget(pagination, '.events') }}
+		</div>
+	</div>
+
+	{% if current_user.can(Permission.MODERATE) %}
+	<div id="myModal" class="modal fade" role="dialog">
+  		<div class="modal-dialog">
+  			<div class="modal-content">
+				{{ wtf.quick_form(form) }}
+			</div>
+		</div>
+	</div>
+	{% endif %}
+
+	<div class="col-md-6">
+		<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=duquetta%40oregonstate.edu&amp;color=%2329527A&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="750" height="600" frameborder="0" scrolling="no"></iframe>
 	</div>
 </div>
-<div class="col-md-6">
-{% if current_user.can(Permission.MODERATE) %}
-{{ wtf.quick_form(form) }}
-{% endif %}
-</div>
-{% endif %}
-{% endblock %}
+	{% endif %}
+	{% endblock %}
 
 {% block scripts %}
 {{ super() }}
