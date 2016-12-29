@@ -1,0 +1,25 @@
+.profile {
+	padding-right: 50px;
+	padding-bottom: 50px;
+}
+
+.profile-pic img {
+
+}
+ 
+.profile-header {
+	float: left;
+}
+
+.profile-header h1 {
+	margin-top: 0px;
+}
+
+.profile-edit {
+	float: right;
+}
+
+.profile-content {
+	clear: both;
+	text-align: left;
+}
