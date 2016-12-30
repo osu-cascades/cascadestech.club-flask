@@ -1,15 +1,20 @@
 {% extends "base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
-
+{% block head %}
+	<link href="{{ url_for('static', filename='css/interior.css') }}" rel="stylesheet">
+{% endblock %}
 {% block title%}Login{% endblock%}
 
 {% block content %}
 <div class="page=header">
       <h1>Login</h1>
 </div>
-<div class="col-md-4 col-md-offset-4">
-      {{ wtf.quick_form(form) }}
-      <p>Forgot your password? <a href="{{ url_for('auth.password_reset_request') }}">Click here to reset it</a>.</p>
-      <p>New user? <a href="{{ url_for('auth.register') }}">Click here to register</a>
-</div>
+
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+	    {{ wtf.quick_form(form) }}
+	    <p>Forgot your password? <a href="{{ url_for('auth.password_reset_request') }}">Click here to reset it</a>.</p>
+	    <p>New user? <a href="{{ url_for('auth.register') }}">Click here to register</a>
+	</div>
+</p>
 {% endblock %}

@@ -3,7 +3,7 @@
                      rgba(20,20,20, .75), 
                      rgba(20,20,20, .75)),
                      url("/static/images/stock-stripe.jpg");
-	min-height: 400px; 
+	min-height: 300px; 
 	opacity: 1.5;
 }
 
