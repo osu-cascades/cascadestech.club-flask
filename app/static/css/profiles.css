@@ -23,3 +23,8 @@
 	clear: both;
 	text-align: left;
 }
+
+.social-link {
+	max-height: 50px;
+	margin-top: 10px;
+}

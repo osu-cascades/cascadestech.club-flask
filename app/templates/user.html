@@ -9,6 +9,11 @@
   <div class="row profile">
     <div class="col-sm-3 profile-pic">
       <img class="img-rounded profile-thumbnail" src="{{ user.gravatar(size=256) }}">
+        {% if current_user.is_administrator() %}
+          <p>
+            <a href="mailto:{{ user.email }}"><img class="social-link" src="{{ url_for('static', filename='images/mail.png') }}"></img></a>
+          </p> 
+        {% endif %}
     </div>
 
     <div class="col-sm-9">
@@ -28,19 +33,29 @@
 
       <div class="profile-content">
         {% if user.name or user.location %} 
-        <p>
-          {% if user.location %}
-          From <a href="http://maps.google.com/?q={{ user.location }}">
-                {{ user.location }}
-              </a>
-          {% endif %}
-          </p>
+          <p>
+            {% if user.location %}
+            From <a href="http://maps.google.com/?q={{ user.location }}">
+                  {{ user.location }}
+                </a>
             {% endif %}
-            {% if current_user.is_administrator() %}
-            <p><a href="mailto:{{ user.email }}">{{ user.email }}</a></p> {% endif %}
-            {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %} <p>
-            {% if user.grad_date %}<p>Graduation Date: {{ user.grad_date }}</p>{% endif %}
-            </p>
+          </p>
+        {% endif %}
+
+        {% if user.about_me %}
+        <h3>About Me:</h3>
+          <p>
+            {{ user.about_me }}
+          </p>
+        {% endif %}
+
+        {% if user.grad_date %}
+        <h3>Graduation Date:</h3>
+          <p>
+            {{ user.grad_date }}
+          </p>
+        {% endif %}
+
       </div>
     </div>
   </div>
