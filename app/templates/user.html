@@ -55,7 +55,7 @@
         {% if user.grad_date %}
         <h3>Graduation Date:</h3>
           <p>
-            {{ user.grad_date }}
+            {{ moment(user.grad_date).format('L') }}
           </p>
         {% endif %}
 

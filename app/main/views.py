@@ -27,12 +27,14 @@ def edit_profile():
 		current_user.name = form.name.data
 		current_user.location = form.location.data
 		current_user.about_me = form.about_me.data
+		current_user.grad_date = form.grad_date.data
 		db.session.add(current_user)
 		flash('Your profile has been updated.')
 		return redirect(url_for('.user', username=current_user.username))
 	form.name.data = current_user.name
 	form.location.data = current_user.location
 	form.about_me.data = current_user.about_me
+	form.grad_date.data = current_user.grad_date
 	return render_template('edit_profile.html', form=form)
 
 
