@@ -7,12 +7,15 @@ from ..models import Role, User
 
 
 class EditProfileForm(Form):
-	name = StringField('Name', validators=[Length(0, 64)])
-	location = StringField('Location', validators=[Length(0, 64)])
-	about_me = TextAreaField('About Me')
-	grad_date = DateField('Graduation Date', format='%m/%d/%Y')
-	github = StringField('GitHub', validators=[URL(message='Not a valid URL')])
-	linkedin = StringField('LinkedIn', validators=[URL(message='Not a valid URL')])
+	name = StringField('Name', validators=[Length(0, 64)], render_kw={"placeholder" : "Enter your name"})
+	location = StringField('Location', validators=[Length(0, 64)], render_kw={"placeholder" : "Where are you from?"})
+	about_me = TextAreaField('About Me', render_kw={"placeholder" : "Enter some information about yourself"})
+	interests = TextAreaField('Interests', render_kw={"placeholder" : "Enter some of your interests, professionally or otherwise"})
+	experience = TextAreaField('Experience', render_kw={"placeholder" : "Enter some of your relevant work history"})
+	projects = TextAreaField('Projects', render_kw={"placeholder" : "Enter some information about some projects you're working on"})
+	grad_date = DateField('Graduation Date', format='%m/%d/%Y', render_kw={"placeholder" : "mm/dd/yyyy"})
+	github = StringField('GitHub', validators=[URL(message='Not a valid URL')], render_kw={"placeholder" : "Enter your GitHub URL: https://github.com/YourUsername"})
+	linkedin = StringField('LinkedIn', validators=[URL(message='Not a valid URL')], render_kw={"placeholder" : "Enter your LinkedIn URL: https://www.linkedin.com/in/YourUsername"})
 	submit = SubmitField('Submit')
 
 
@@ -25,6 +28,9 @@ class EditProfileAdminForm(Form):
 	name = StringField('Name', validators=[Length(0, 64)])
 	location = StringField('Location', validators=[Length(0, 64)])
 	about_me = TextAreaField('About Me')
+	interests = TextAreaField('Interests')
+	experience = TextAreaField('Experience')
+	projects = TextAreaField('Projects')
 	grad_date = DateField('Graduation Date', format='%m/%d/%Y')
 	github = StringField('GitHub', validators=[URL(message='Not a valid URL')])
 	linkedin = StringField('LinkedIn', validators=[URL(message='Not a valid URL')])

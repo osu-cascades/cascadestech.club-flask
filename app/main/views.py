@@ -27,6 +27,9 @@ def edit_profile():
 		current_user.name = form.name.data
 		current_user.location = form.location.data
 		current_user.about_me = form.about_me.data
+		current_user.interests = form.interests.data
+		current_user.experience = form.experience.data
+		current_user.projects = form.projects.data
 		current_user.grad_date = form.grad_date.data
 		current_user.github = form.github.data
 		current_user.linkedin = form.linkedin.data
@@ -36,6 +39,9 @@ def edit_profile():
 	form.name.data = current_user.name
 	form.location.data = current_user.location
 	form.about_me.data = current_user.about_me
+	form.interests.data = current_user.interests
+	form.experience.data = current_user.experience
+	form.projects.data = current_user.projects
 	form.grad_date.data = current_user.grad_date
 	form.github.data = current_user.github
 	form.linkedin.data = current_user.linkedin
@@ -56,9 +62,12 @@ def edit_profile_admin(id):
 		user.name = form.name.data
 		user.location = form.location.data
 		user.about_me = form.about_me.data
+		user.interests = form.interests.data
+		user.experience = form.experience.data
+		user.projects = form.projects.data
 		user.grad_date = form.grad_date.data
 		user.github = form.github.data
-		current_user.linkedin = form.linkedin.data
+		user.linkedin = form.linkedin.data
 		db.session.add(user)
 		flash('The profile has been updated.')
 		return redirect(url_for('.user', username=user.username))
@@ -69,9 +78,12 @@ def edit_profile_admin(id):
 	form.name.data = user.name
 	form.location.data = user.location
 	form.about_me.data = user.about_me
+	form.interests.data = user.interests
+	form.experience.data = user.experience
+	form.projects.data = user.projects
 	form.grad_date.data = user.grad_date
-	form.github.data = current_user.github
-	form.linkedin.data = current_user.linkedin
+	form.github.data = user.github
+	form.linkedin.data = user.linkedin
 	return render_template('edit_profile.html', form=form, user=user)
 
 

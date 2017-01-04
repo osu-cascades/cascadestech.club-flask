@@ -13,7 +13,7 @@
       <p>Contact Me:</p>
 
       <a href="mailto:{{ user.email }}"><img class="social-link" src="{{ url_for('static', filename='images/mail.png') }}"></img></a>
-      
+
       {% if user.github %}
       <a href="{{ user.github }}"><img class="social-link" src="{{ url_for('static', filename='images/github.png') }}"></img></a>
       {% endif %}
@@ -39,7 +39,6 @@
           {% endif %}
 
       <div class="profile-content">
-        {% if user.name or user.location %} 
           <p>
             {% if user.location %}
             From <a href="http://maps.google.com/?q={{ user.location }}">
@@ -47,23 +46,81 @@
                 </a>
             {% endif %}
           </p>
-        {% endif %}
 
-        {% if user.about_me %}
-        <h3>About Me:</h3>
           <p>
-            {{ user.about_me }}
+            {% if user.grad_date %}
+              Graduation Date: {{ moment(user.grad_date).format('L') }}
+            {% endif %}
           </p>
-        {% endif %}
 
-        {% if user.grad_date %}
-        <h3>Graduation Date:</h3>
-          <p>
-            {{ moment(user.grad_date).format('L') }}
-          </p>
-        {% endif %}
+          <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                  About Me
+                  </a>
+                </h4>
+              </div>
 
-      </div>
+              <div id="collapse1" class="panel-collapse collapse in">
+                <div class="panel-body">
+                  {% if user.about_me %}
+                    <p>{{ user.about_me }}</p>
+                  {% else %}
+                    <em>This user hasn't entered about me info</em>
+                  {% endif %}
+
+                  {% if user.interests %}
+                    <h4>Interests</h4>
+                    <p>{{ user.interests }}</p>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                  Experience
+                  </a>
+                </h4>
+              </div>
+
+              <div id="collapse2" class="panel-collapse collapse">
+                <div class="panel-body">
+                  {% if user.experience %}
+                    <p>{{ user.experience }}</p>
+                  {% else %}
+                    <em>This user hasn't entered their experience</em>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                  Projects
+                  </a>
+                </h4>
+              </div>
+
+              <div id="collapse3" class="panel-collapse collapse">
+                <div class="panel-body">
+                  {% if user.projects %}
+                    <p>{{ user.projects }}</p>
+                  {% else %}
+                    <em>This user hasn't entered their projects</em>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div><!--End Accordion -->
+
+      </div><!-- End profile-content -->
     </div>
   </div>
 
