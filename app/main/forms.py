@@ -1,14 +1,9 @@
 from flask_wtf import Form
 from wtforms import StringField, BooleanField, TextAreaField, SubmitField, DateField, SelectField, PasswordField
-from wtforms.validators import Required, Email, Length, Regexp, EqualTo
+from wtforms.validators import Required, Email, Length, Regexp, EqualTo, URL
 from wtforms import ValidationError
 from flask_pagedown.fields import PageDownField
 from ..models import Role, User
-
-class LoginForm(Form):
-	username = StringField('username', validators=[Required()])
-	password = PasswordField('password', validators=[Required()])
-	remember_me = BooleanField('remember_me', default=False)
 
 
 class EditProfileForm(Form):
@@ -16,6 +11,8 @@ class EditProfileForm(Form):
 	location = StringField('Location', validators=[Length(0, 64)])
 	about_me = TextAreaField('About Me')
 	grad_date = DateField('Graduation Date', format='%m/%d/%Y')
+	github = StringField('GitHub', validators=[URL(message='Not a valid URL')])
+	linkedin = StringField('LinkedIn', validators=[URL(message='Not a valid URL')])
 	submit = SubmitField('Submit')
 
 
@@ -28,6 +25,9 @@ class EditProfileAdminForm(Form):
 	name = StringField('Name', validators=[Length(0, 64)])
 	location = StringField('Location', validators=[Length(0, 64)])
 	about_me = TextAreaField('About Me')
+	grad_date = DateField('Graduation Date', format='%m/%d/%Y')
+	github = StringField('GitHub', validators=[URL(message='Not a valid URL')])
+	linkedin = StringField('LinkedIn', validators=[URL(message='Not a valid URL')])
 	submit = SubmitField('Submit')
 
 	def __init__(self, user, *args, **kwargs):

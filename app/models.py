@@ -80,6 +80,8 @@ class User(UserMixin, db.Model):
 	location = db.Column(db.String(64))
 	about_me = db.Column(db.Text())
 	grad_date = db.Column(db.DateTime(), default=datetime.utcnow)
+	github = db.Column(db.String(64))
+	linkedin = db.Column(db.String(64))
 	''' endUserProfiles '''
 
 	@staticmethod

@@ -13,10 +13,14 @@
       <p>Contact Me:</p>
 
       <a href="mailto:{{ user.email }}"><img class="social-link" src="{{ url_for('static', filename='images/mail.png') }}"></img></a>
+      
+      {% if user.github %}
+      <a href="{{ user.github }}"><img class="social-link" src="{{ url_for('static', filename='images/github.png') }}"></img></a>
+      {% endif %}
 
-      <a href="mailto:{{ user.email }}"><img class="social-link" src="{{ url_for('static', filename='images/github.png') }}"></img></a>
-
-      <a href="mailto:{{ user.email }}"><img class="social-link" src="{{ url_for('static', filename='images/linkedin.png') }}"></img></a>
+      {% if user.linkedin %}
+      <a href="{{ user.linkedin }}"><img class="social-link" src="{{ url_for('static', filename='images/linkedin.png') }}"></img></a>
+      {% endif %}
     </div>
 
     <div class="col-sm-9">
