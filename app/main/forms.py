@@ -52,5 +52,5 @@ class EditProfileAdminForm(Form):
 
 class PostForm(Form):
 	title = StringField('Title', validators=[Required()], render_kw={"placeholder" : "Enter a title for the event"})
-	body = PageDownField('Body', validators=[Required()])
+	body = PageDownField('Body', validators=[Required()], render_kw={"placeholder" : "Enter the important info about the event. Date, time, etc."})
 	submit = SubmitField('Submit')

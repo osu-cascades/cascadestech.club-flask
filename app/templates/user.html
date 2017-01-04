@@ -6,11 +6,9 @@
 {% block title%}{{ user.name }}'s Profile{% endblock %}
 
 {% block content %}
-  <div class="row profile">
+<div class="row profile">
     <div class="col-sm-3">
-      <img class="img-rounded profile-thumbnail  profile-pic" src="{{ user.gravatar(size=256) }}">
-
-      <p>Contact Me:</p>
+      <img class="img-rounded profile-thumbnail  profile-pic" src="{{ user.gravatar(size=256) }}"></img>
 
       <a href="mailto:{{ user.email }}"><img class="social-link" src="{{ url_for('static', filename='images/mail.png') }}"></img></a>
 
@@ -32,11 +30,16 @@
           <a class="btn btn-default" href="{{ url_for('.edit_profile') }}">
             Edit Profile
           </a>
-          {% endif %}
-          {% if current_user.is_administrator() %}
-          <a class="btn btn-danger" href="{{ url_for('.edit_profile_admin', id=user.id) }}">Edit Profile [Admin]</a>
         </div>
-          {% endif %}
+        {% endif %}
+
+        {% if current_user.is_administrator() %}
+        <div class="profile-edit">
+          <a class="btn btn-danger" href="{{ url_for('.edit_profile_admin', id=user.id) }}">
+            Edit Profile [Admin]
+          </a>
+        </div>
+        {% endif %}
 
       <div class="profile-content">
           <p>
@@ -68,11 +71,11 @@
                   {% if user.about_me %}
                     <p>{{ user.about_me }}</p>
                   {% else %}
-                    <em>This user hasn't entered about me info</em>
+                    <em><p>This user hasn't entered about me info</p></em>
                   {% endif %}
 
                   {% if user.interests %}
-                    <h4>Interests</h4>
+                    <strong><p>Interests</p></strong>
                     <p>{{ user.interests }}</p>
                   {% endif %}
                 </div>
@@ -93,7 +96,7 @@
                   {% if user.experience %}
                     <p>{{ user.experience }}</p>
                   {% else %}
-                    <em>This user hasn't entered their experience</em>
+                    <em><p>This user hasn't entered their experience</p></em>
                   {% endif %}
                 </div>
               </div>
@@ -113,7 +116,7 @@
                   {% if user.projects %}
                     <p>{{ user.projects }}</p>
                   {% else %}
-                    <em>This user hasn't entered their projects</em>
+                    <em><p>This user hasn't entered their projects</p></em>
                   {% endif %}
                 </div>
               </div>
@@ -121,7 +124,6 @@
           </div><!--End Accordion -->
 
       </div><!-- End profile-content -->
-    </div>
-  </div>
-
+    </div><!-- End col-md-9 -->
+</div>
 {% endblock %}
