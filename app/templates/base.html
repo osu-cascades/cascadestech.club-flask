@@ -60,12 +60,8 @@
         </div><!-- /.container-fluid -->
       </nav>
 
-      {% if heroText %}
-        <div class="container">
-          <h1 id="hero-text"><strong>Cascades Tech Club</strong></h1>
-          <h4 id="hero-sub">A student organization of OSU Cascades</h4>
-        </div>
-      {% endif %}
+    {% block hero %}{% endblock %}
+      
     </div>
 
     {% with messages = get_flashed_messages() %}

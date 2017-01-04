@@ -18,7 +18,7 @@ def before_request():
 def unconfirmed():
 	if current_user.is_anonymous or current_user.confirmed:
 		return redirect('main.home')
-	return render_template('auth/unconfirmed.html', home=False, heroText=False)
+	return render_template('auth/unconfirmed.html')
 
 
 @auth.route('/login', methods=['GET', 'POST'])
@@ -30,10 +30,7 @@ def login():
 			login_user(user, form.remember_me.data)
 			return redirect(request.args.get('next') or url_for('main.home'))
 		flash('Invalid email or password.')
-	return render_template('auth/login.html',
-							home=False,
-							heroText=False,
-							form=form)
+	return render_template('auth/login.html', form=form)
 
 
 @auth.route('/logout')
@@ -55,7 +52,7 @@ def register():
 		send_email(user.email, 'Confirm Your Account', 'auth/email/confirm', user=user, token=token)
 		flash('A confirmation email has been sent to you by email')
 		return redirect(url_for('auth.login'))
-	return render_template('auth/register.html', form=form, home=False, heroText=False)
+	return render_template('auth/register.html', form=form)
 
 
 @auth.route('/confirm/<token>')
@@ -91,7 +88,7 @@ def change_password():
 			return redirect(url_for('main.home'))
 		else:
 			flash('Invalid password.')
-	return render_template('auth/change_password.html', form=form, home=False, heroText=False)
+	return render_template('auth/change_password.html', form=form)
 
 
 @auth.route('/reset', methods=['GET', 'POST'])
@@ -107,7 +104,7 @@ def password_reset_request():
 						user=user, token=token, next=request.args.get('next'))
 			flash('An email with instructions to reset your password has been sent to you.')
 			return redirect(url_for('auth.login'))
-	return render_template('auth/reset_password.html', form=form, home=False, heroText=False)
+	return render_template('auth/reset_password.html', form=form)
 
 
 @auth.route('/reset/<token>', methods=['GET', 'POST'])
@@ -124,7 +121,7 @@ def password_reset(token):
 			return redirect(url_for('auth.login'))
 		else:
 			return redirect(url_for('main.home'))
-	return render_template('auth/reset_password.html', form=form, home=False, heroText=False)
+	return render_template('auth/reset_password.html', form=form)
 
 
 @auth.route('/change-email', methods=['GET', 'POST'])

@@ -8,9 +8,7 @@ from ..decorators import admin_required, permission_required
 
 @main.route('/')
 def home():
-	return render_template('index.html',
-							home=True,
-							heroText=True)
+	return render_template('index.html')
 
 
 @main.route('/user/<username>')
@@ -18,7 +16,7 @@ def user(username):
 	user = User.query.filter_by(username=username).first()
 	if user is None:
 		abort(404)
-	return render_template('user.html', user=user, home=False, heroText=False)
+	return render_template('user.html', user=user)
 
 
 @main.route('/edit-profile', methods=['GET', 'POST'])
@@ -35,7 +33,7 @@ def edit_profile():
 	form.name.data = current_user.name
 	form.location.data = current_user.location
 	form.about_me.data = current_user.about_me
-	return render_template('edit_profile.html', form=form, home=False, heroText=False)
+	return render_template('edit_profile.html', form=form)
 
 
 @main.route('/edit-profile/<int:id>', methods=['GET', 'POST'])

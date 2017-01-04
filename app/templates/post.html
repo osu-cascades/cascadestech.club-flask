@@ -1,5 +1,12 @@
 {% extends "base.html" %}
+{% block head %}
+  <link href="{{ url_for('static', filename='css/interior.css') }}" rel="stylesheet">
+{% endblock %}
 {% block title %}Post{% endblock %}
 {% block content %}
-{% include '_posts.html' %}
+<div class="container">
+	<div class="row">
+	{% include '_posts.html' %}
+	</div>
+</div>
 {% endblock %}
