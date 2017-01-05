@@ -26,7 +26,8 @@ A web application for the Cascades Tech Club. Built using Flask.
 	  - For development set `DEV_DATABASE_URL`
 	  - For testing set `TEST_DATABASE_URL`
 	  - For production set `DATABASE_URL`
-	  - I will leave it up to you to google how to construct the url for your database, reach out if you need help
+	  - I'm using MySQL with a URI variable set like this:
+	  	- `$ export DATABASE_URL=mysql://username:password@localhost/db_name`
 - You're almost up and running, you will now have to deploy the database model to do that run:
 	- `$ python manage.py deploy`
 - Your environment should be ready to go! To start the server run:
