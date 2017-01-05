@@ -16,6 +16,7 @@ class Config:
 	POSTS_PER_PAGE = 3
 	MEMBERS_PER_PAGE = 12
 	WTF_CSRF_ENABLED = True
+	SSL_DISABLE = True
 
 	@staticmethod
 	def init_app(app): 
@@ -67,6 +68,10 @@ class HerokuConfig(ProductionConfig):
 	@classmethod
 	def init_app(cls, app):
 		ProductionConfig.init_app(app)
+
+		#handle proxy server headers
+		from werkzeug.contrib.fixers import ProxyFix
+		app.wsgi_app = ProxyFix(app.wsgi_app)
 
 		# log to stderr
 		import logging
