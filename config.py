@@ -44,7 +44,7 @@ class ProductionConfig(Config):
 
     		# email errors to the administrators
     		import logging
-    		from logging_handlers import SMTPHandler
+    		from logging.handlers import SMTPHandler
     		credentials = None
     		secure = None
     		if getattr(cls, 'MAIL_USERNAME', None) is not None:
