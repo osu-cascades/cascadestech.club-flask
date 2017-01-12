@@ -1,6 +1,6 @@
 from flask_wtf import Form
 from wtforms import StringField, BooleanField, TextAreaField, SubmitField, DateField, SelectField, PasswordField
-from wtforms.validators import Required, Email, Length, Regexp, EqualTo, URL
+from wtforms.validators import Required, Email, Length, Regexp, EqualTo, URL, Optional
 from wtforms import ValidationError
 from flask_pagedown.fields import PageDownField
 from ..models import Role, User
@@ -14,8 +14,8 @@ class EditProfileForm(Form):
 	experience = TextAreaField('Experience', render_kw={"placeholder" : "Enter some of your relevant work history"})
 	projects = TextAreaField('Projects', render_kw={"placeholder" : "Enter some information about some projects you're working on"})
 	grad_date = DateField('Graduation Date', format='%m/%d/%Y', render_kw={"placeholder" : "mm/dd/yyyy"})
-	github = StringField('GitHub', validators=[URL(message='Not a valid URL')], render_kw={"placeholder" : "Enter your GitHub URL: https://github.com/YourUsername"})
-	linkedin = StringField('LinkedIn', validators=[URL(message='Not a valid URL')], render_kw={"placeholder" : "Enter your LinkedIn URL: https://www.linkedin.com/in/YourUsername"})
+	github = StringField('GitHub', validators=[Optional(strip_whitespace=True), URL(message='Not a valid URL')], render_kw={"placeholder" : "Enter your GitHub URL: https://github.com/YourUsername"})
+	linkedin = StringField('LinkedIn', validators=[Optional(strip_whitespace=True), URL(message='Not a valid URL')], render_kw={"placeholder" : "Enter your LinkedIn URL: https://www.linkedin.com/in/YourUsername"})
 	submit = SubmitField('Submit')
 
 
@@ -32,8 +32,8 @@ class EditProfileAdminForm(Form):
 	experience = TextAreaField('Experience')
 	projects = TextAreaField('Projects')
 	grad_date = DateField('Graduation Date', format='%m/%d/%Y')
-	github = StringField('GitHub', validators=[URL(message='Not a valid URL')])
-	linkedin = StringField('LinkedIn', validators=[URL(message='Not a valid URL')])
+	github = StringField('GitHub', validators=[Optional(strip_whitespace=True), URL(message='Not a valid URL')])
+	linkedin = StringField('LinkedIn', validators=[Optional(strip_whitespace=True), URL(message='Not a valid URL')])
 	submit = SubmitField('Submit')
 
 	def __init__(self, user, *args, **kwargs):
