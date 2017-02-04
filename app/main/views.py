@@ -24,7 +24,8 @@ def user(username):
 def edit_profile():
 	form = EditProfileForm()
 	if form.validate_on_submit():
-		current_user.name = form.name.data
+		current_user.first_name = form.first_name.data
+		current_user.last_name = form.last_name.data
 		current_user.location = form.location.data
 		current_user.about_me = form.about_me.data
 		current_user.interests = form.interests.data
@@ -36,7 +37,8 @@ def edit_profile():
 		db.session.add(current_user)
 		flash('Your profile has been updated.')
 		return redirect(url_for('.user', username=current_user.username))
-	form.name.data = current_user.name
+	form.first_name.data = current_user.first_name
+	form.last_name.data = current_user.last_name
 	form.location.data = current_user.location
 	form.about_me.data = current_user.about_me
 	form.interests.data = current_user.interests
@@ -59,7 +61,8 @@ def edit_profile_admin(id):
 		user.username = form.username.data
 		user.confirmed = form.confirmed.data
 		user.role = Role.query.get(form.role.data)
-		user.name = form.name.data
+		user.first_name = form.first_name.data
+		user.last_name = form.last_name.data
 		user.location = form.location.data
 		user.about_me = form.about_me.data
 		user.interests = form.interests.data
@@ -75,7 +78,8 @@ def edit_profile_admin(id):
 	form.username.data = user.username
 	form.confirmed.data = user.confirmed
 	form.role.data = user.role_id
-	form.name.data = user.name
+	form.first_name.data = user.first_name
+	form.last_name.data = user.last_name
 	form.location.data = user.location
 	form.about_me.data = user.about_me
 	form.interests.data = user.interests
@@ -140,7 +144,7 @@ def delete(id):
 @main.route('/members')
 def members():
 	page = request.args.get('page', 1, type=int)
-	pagination = User.query.order_by(User.name.desc()).paginate(
+	pagination = User.query.order_by(User.last_name.desc()).paginate(
 		page, per_page=current_app.config['MEMBERS_PER_PAGE'], error_out=False)
 	members = pagination.items
 	return render_template('members.html', members=members, pagination=pagination)

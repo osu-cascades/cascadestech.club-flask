@@ -3,7 +3,7 @@
   <link href="{{ url_for('static', filename='css/interior.css') }}" rel="stylesheet">
   <link href="{{ url_for('static', filename='css/profiles.css') }}" rel="stylesheet">
 {% endblock %}
-{% block title%}{{ user.name }}'s Profile{% endblock %}
+{% block title%}{{ user.first_name }} {{ user.last_name }}'s Profile{% endblock %}
 
 {% block content %}
 <div class="row profile">
@@ -23,7 +23,7 @@
 
     <div class="col-sm-9">
       <div class="profile-header">
-        <h1>{{ user.name }} {{ user.last }}</h1>
+        <h1>{{ user.first_name }} {{ user.last_name }}</h1>
       </div>
         {% if user == current_user %}
         <div class="profile-edit">

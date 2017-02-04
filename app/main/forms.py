@@ -7,8 +7,8 @@ from ..models import Role, User
 
 
 class EditProfileForm(Form):
-	name = StringField('First Name', validators=[Length(0, 64)], render_kw={"placeholder" : "Enter your first name"})
-	last = StringField('Last Name', validators=[Length(0, 64)], render_kw={"placeholder" : "Enter your last name"})
+	first_name = StringField('First Name', validators=[Length(0, 64)], render_kw={"placeholder" : "Enter your first name"})
+	last_name = StringField('Last Name', validators=[Length(0, 64)], render_kw={"placeholder" : "Enter your last name"})
 	location = StringField('Location', validators=[Length(0, 64)], render_kw={"placeholder" : "Where are you from?"})
 	about_me = TextAreaField('About Me', render_kw={"placeholder" : "Enter some information about yourself"})
 	interests = TextAreaField('Interests', render_kw={"placeholder" : "Enter some of your interests, professionally or otherwise"})
@@ -26,8 +26,8 @@ class EditProfileAdminForm(Form):
 													0, 'Usernames must have only letters, numbers, dots, or underscores')])
 	confirmed = BooleanField('Confirmed')
 	role = SelectField('Role', coerce=int)
-	name = StringField('First Name', validators=[Length(0, 64)])
-	last = StringField('Last Name', validators=[Length(0, 64)])
+	first_name = StringField('First Name', validators=[Length(0, 64)])
+	last_name = StringField('Last Name', validators=[Length(0, 64)])
 	location = StringField('Location', validators=[Length(0, 64)])
 	about_me = TextAreaField('About Me')
 	interests = TextAreaField('Interests')

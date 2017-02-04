@@ -76,7 +76,7 @@ class User(UserMixin, db.Model):
 	confirmed = db.Column(db.Boolean, default=False)
 	posts = db.relationship('Post', backref='author', lazy='dynamic')
 	''' User Profiles '''
-	name = db.Column(db.String(64))
+	first_name = db.Column(db.String(64))
 	last_name = db.Column(db.String(64))
 	location = db.Column(db.String(64))
 	about_me = db.Column(db.Text())
