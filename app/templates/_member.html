@@ -7,8 +7,6 @@
 			</div>
 			<div class="member-content">
 				<h3>{{ member.first_name }} {{ member.last_name }}</h3>
-				<p>Who are you and what do you want?</p>
-				<p><strong>Tech:</strong> C#, poo, Ruby, Go, AWS Lambda, Docker</p>
 				<a href="{{ url_for('.user', username=member.username) }}">
 					<span class="label label-info ghost-btn">View Profile</span>
 				</a>
