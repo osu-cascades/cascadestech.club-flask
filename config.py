@@ -11,7 +11,7 @@ class Config:
 	MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
 	MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
 	CTC_MAIL_SUBJECT_PREFIX = '[Cascades Tech Club]'
-	CTC_MAIL_SENDER = 'donotreply.ctc@gmail.com' 
+	CTC_MAIL_SENDER = 'CascadesTechClub@gmail.com' 
 	CTC_ADMIN = os.environ.get('CTC_ADMIN')
 	POSTS_PER_PAGE = 3
 	MEMBERS_PER_PAGE = 12
