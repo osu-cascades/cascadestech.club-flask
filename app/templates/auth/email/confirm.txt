@@ -1,4 +1,4 @@
-Dear {{ user.name }},
+Dear {{ user.first_name }},
 
 Welcome to the Cascades Tech Club!
 
