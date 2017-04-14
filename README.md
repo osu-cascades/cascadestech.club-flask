@@ -9,9 +9,12 @@ A web application for the Cascades Tech Club. Built using Flask.
 		- `$ pip install virtualenv`
 	- If you want to go this route, you need to then create your virtual environment
 	  and give it a name for example if ENV is your desired virtual environment, run:
-	  	- `$ virtualenv ENV`
+      - `$ virtualenv ENV`
+      - Also, make sure your .gitignore file contains the correct name of your virtual environment,
+      by default it ignores `venv` under the heading `#virtual environment`
 	- Then turn your new virtual environment on by running:
 		- `$ source bin/activate`
+        - `or on Windows: ENV\Scripts\activate`
 	- You should now see a `(ENV)` before your prompt
 - In the root of the project run:
 	- `$ pip install -r requirements.txt`
