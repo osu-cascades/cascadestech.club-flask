@@ -2,6 +2,8 @@ body {
 	font-size: 18px;
 	/*color: #777;*/
 	text-align: center;
+    padding: 0;
+    margin: 0;
 }
 
 body p {
@@ -15,7 +17,6 @@ body p {
 .bot-margin {
 	margin-bottom: 50px;
 }
-
 
 /* ---- Nav bar style ---- */
 .navbar-default {
@@ -41,7 +42,6 @@ body p {
 	color: #ff5900;
 }
 /* ---- Nav bar style ENDS---- */
-
 
 .ghost-btn {
 	color: #ff5900;
