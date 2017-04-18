@@ -1,7 +1,7 @@
 # CTC-web-app
 A web application for the Cascades Tech Club. Built using Flask.
 
-##To use this code you will need to set some things up first:
+## To use this code you will need to set some things up first:
 - Create a folder where the code will live and pull it on down
 - If you don't have python installed, get dat
 - It's good practice to use a virtual environment but you don't have to
@@ -36,5 +36,5 @@ A web application for the Cascades Tech Club. Built using Flask.
 - Your environment should be ready to go! To start the server run:
 	- `$ python manage.py runserver`
 
-###If you want to build off this project I suggest reading [Miguel Grinberg's](http://shop.oreilly.com/product/0636920031116.do) book.
-####Reach out if you have questions!
+### If you want to build off this project I suggest reading [Miguel Grinberg's](http://shop.oreilly.com/product/0636920031116.do) book.
+#### Reach out if you have questions!
