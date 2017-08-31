@@ -1,4 +1,5 @@
 *.py[cod]
+/flask
 
 # C extensions
 *.so
