@@ -17,7 +17,7 @@ class RegistrationForm(Form):
                                           'Usernames must have only letters, numbers, dots or underscores')])
 	first_name = StringField('First Name', validators=[Required(), Length(3, 64)])
 	last_name = StringField('Last Name', validators=[Required(), Length(3, 64)])
-	password = PasswordField('Password', validators=[Required(), Length(12, 64, message='Password must be atleast 12 characters long'), 
+	password = PasswordField('Password', validators=[Required(), Length(12, 64, message='Password must be at least 12 characters long'), 
 											EqualTo('password2', message='Passwords must match.')])
 	password2 = PasswordField('Confirm password', validators=[Required()])
 	submit = SubmitField('Register')

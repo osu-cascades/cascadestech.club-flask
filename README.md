@@ -1,7 +1,7 @@
 # CTC-web-app
 A web application for the Cascades Tech Club. Built using Flask.
 
-##To use this code you will need to set some things up first:
+## To use this code you will need to set some things up first:
 - Create a folder where the code will live and pull it on down
 - If you don't have python installed, get dat
 - It's good practice to use a virtual environment but you don't have to
@@ -9,9 +9,12 @@ A web application for the Cascades Tech Club. Built using Flask.
 		- `$ pip install virtualenv`
 	- If you want to go this route, you need to then create your virtual environment
 	  and give it a name for example if ENV is your desired virtual environment, run:
-	  	- `$ virtualenv ENV`
+      - `$ virtualenv ENV`
+      - Also, make sure your .gitignore file contains the correct name of your virtual environment,
+      by default it ignores `venv` under the heading `#virtual environment`
 	- Then turn your new virtual environment on by running:
 		- `$ source bin/activate`
+        - `or on Windows: ENV\Scripts\activate`
 	- You should now see a `(ENV)` before your prompt
 - In the root of the project run:
 	- `$ pip install -r requirements.txt`
@@ -33,5 +36,5 @@ A web application for the Cascades Tech Club. Built using Flask.
 - Your environment should be ready to go! To start the server run:
 	- `$ python manage.py runserver`
 
-###If you want to build off this project I suggest reading [Miguel Grinberg's](http://shop.oreilly.com/product/0636920031116.do) book.
-####Reach out if you have questions!
+### If you want to build off this project I suggest reading [Miguel Grinberg's](http://shop.oreilly.com/product/0636920031116.do) book.
+#### Reach out if you have questions!
