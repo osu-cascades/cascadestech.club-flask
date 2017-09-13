@@ -38,3 +38,6 @@ A web application for the Cascades Tech Club. Built using Flask.
 
 ### If you want to build off this project I suggest reading [Miguel Grinberg's](http://shop.oreilly.com/product/0636920031116.do) book.
 #### Reach out if you have questions!
+
+___
+(c) 2017 [Justin Tappert](https://github.com/JWTappert)
